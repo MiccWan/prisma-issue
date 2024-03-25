@@ -18,13 +18,13 @@ async function main() {
     },
   });
 
-  console.log('Find with findMany:', messages);
+  console.log('Find with findMany:', messages); // [Message]
 
   // Got nothing with `$queryRaw`
   const messages2 = await prisma.$queryRaw`SELECT *
   FROM "Message" m
   WHERE m.created_at = ${timestamp};`;
-  console.log('Find with $queryRaw:', messages2);
+  console.log('Find with $queryRaw:', messages2); // []
 }
 
 
